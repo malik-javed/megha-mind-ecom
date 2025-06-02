@@ -1,0 +1,40 @@
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin: auto;
+  text-align: center;
+  font-family: arial;
+}
+
+.price {
+  color: grey;
+  font-size: 22px;
+}
+
+.card button {
+  border: none;
+  outline: 0;
+  padding: 12px;
+  color: white;
+  /* background-color: #000; */
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+  margin-bottom: 6px;
+}
+.add-btn {
+  background-color: #000;
+}
+.remove-btn {
+  background-color: rgb(248, 58, 58);
+}
+
+.card button:hover {
+  opacity: 0.7;
+}
+
+.product-image {
+  width: 200px;
+  height: 200px;
+}

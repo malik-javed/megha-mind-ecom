@@ -1,0 +1,89 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #ffffff;
+  padding: 10px 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-left .company-name {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #1e40af;
+  text-decoration: none;
+}
+
+.navbar-center {
+  display: flex;
+  gap: 30px;
+}
+
+.navbar-center .nav-link {
+  font-size: 1rem;
+  color: #4b5563;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.navbar-center .nav-link:hover {
+  color: #1e40af;
+}
+
+.navbar-center .nav-link-active {
+  color: #1e40af;
+  font-weight: 500;
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.search-input {
+  padding: 6px 10px;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  font-size: 0 nine rem;
+  outline: none;
+}
+
+.search-input:focus {
+  border-color: #1e40af;
+}
+
+.icon-link {
+  font-size: 1.25rem;
+  color: #4b5563;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.icon-link:hover {
+  color: #f97316;
+}
+
+.icon-link[href="/cart"]:hover {
+  color: #10b981;
+}
+
+.total-items {
+  /* color:red; */
+  /* border: 2px solid red; */
+  /* background-color: red; */
+  /* border-radius: 20px;
+  color: white; */
+}
+
+.badge {
+  font-size: 12px;
+  color: #fff;
+  background: red;
+  border-radius: 50%;
+  padding: 0 5px;
+  position: relative;
+  left: -8px;
+  top: -10px;
+  opacity: 0.9;
+}
