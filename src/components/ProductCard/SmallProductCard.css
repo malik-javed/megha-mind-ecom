@@ -1,0 +1,40 @@
+.smallproduct-card {
+  display: flex;
+  flex-direction: row;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  gap: 10px;
+  /* border: 2px solid red; */
+}
+.image-container {
+  margin: 5px 5px;
+}
+
+img {
+  height: 100px;
+  width: 100px;
+}
+
+.product-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* border: 2px solid green; */
+}
+
+.product-name h3 {
+  /* margin: 2px 2px 2px 2px; */
+  /* border: 2px solid orange; */
+  margin: 23px 26px 12px 16px;
+  font-size: 14px;
+  padding: 4px 4px 1px 2px;
+}
+
+.product-name button {
+  margin: 7px 7px 3px 36px;
+}
+
+.add-btn {
+  background-color: #000;
+  color: white;
+}

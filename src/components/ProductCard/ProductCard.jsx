@@ -45,7 +45,7 @@ function ProductCard({ product }) {
       <p className="price"> {product.price} </p>
       <p className="desc">{product.description}</p>
       <button className="add-btn" onClick={handleAddToCart}>
-        Add to Card
+        Add to Cart
       </button>
       {cartItems.some((item) => item.id === product.id) ? (
         <button
