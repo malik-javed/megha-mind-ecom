@@ -1,0 +1,129 @@
+.product-details-container {
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.product-details-card {
+  display: flex;
+  gap: 40px;
+  background: white;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.product-image-section {
+  flex: 1;
+  max-width: 500px;
+}
+
+.product-detail-image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.product-info-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.product-title {
+  font-size: 32px;
+  font-weight: 600;
+  color: #1a202c;
+  margin: 0;
+}
+
+.product-category {
+  font-size: 16px;
+  color: #718096;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 0;
+}
+
+.product-price {
+  font-size: 28px;
+  font-weight: 600;
+  color: #2c5282;
+  margin: 8px 0;
+}
+
+.product-description {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #4a5568;
+  margin: 16px 0;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.add-to-cart-btn, .wishlist-btn {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.add-to-cart-btn {
+  background-color: #000;
+  color: white;
+  flex: 1;
+}
+
+.add-to-cart-btn:hover {
+  background-color: #1a202c;
+  transform: translateY(-2px);
+}
+
+.wishlist-btn {
+  background-color: #fff;
+  color: #2d3748;
+  border: 2px solid #e2e8f0;
+  padding: 10px 20px;
+}
+
+.wishlist-btn:hover {
+  border-color: #cbd5e0;
+  background-color: #f7fafc;
+}
+
+.wishlist-btn.in-wishlist {
+  background-color: #fed7e2;
+  border-color: #fed7e2;
+  color: #702459;
+}
+
+.product-not-found {
+  text-align: center;
+  padding: 40px;
+  font-size: 20px;
+  color: #718096;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .product-details-card {
+    flex-direction: column;
+  }
+
+  .product-image-section {
+    max-width: 100%;
+  }
+
+  .action-buttons {
+    flex-direction: column;
+  }
+} 

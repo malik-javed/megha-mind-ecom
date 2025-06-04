@@ -1,27 +1,29 @@
 import React from "react";
 import "./SmallProductCard.css";
-import { useDispatch, useSelector } from "react-redux";
-import { addToCart, removeFromCart } from "../../features/cart/cartSlice";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../../features/cart/cartSlice";
 import toast from "react-hot-toast";
 
 function SmallProductCard({ product }) {
-  const cartItems = useSelector((state) => state.cart.cartItems);
   const dispatch = useDispatch();
 
   const handleAddToCart = () => {
     dispatch(addToCart(product));
-    toast.success("Product added");
+    toast.success("Product added to cart");
   };
 
   return (
     <div className="smallproduct-card">
       <div className="image-container">
-        <img src={product.image} alt="" />
+        <img src={product.image} alt={product.name} />
       </div>
       <div className="product-content">
-        <h3>{product.name}</h3>
+        <div className="product-info">
+          <h3>{product.name}</h3>
+          <p className="price-small">{product.price}</p>
+        </div>
         <button className="add-btn" onClick={handleAddToCart}>
-          Add to cart
+          Add to Cart
         </button>
       </div>
     </div>

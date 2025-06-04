@@ -10,22 +10,24 @@ function Home() {
   const filterProducts = searchTerm
     ? products.filter(
         (product) =>
-          product.name.toLowerCase().includes(searchTerm) ||
-          product.description.toLowerCase().includes(searchTerm)
+          product.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+          product.description.toLowerCase().includes(searchTerm.toLowerCase())
       )
     : products;
 
   // console.log(filterProducts);
   return (
     <div>
-      <h2>Our Products</h2>
+      <div className="home-header">
+        <h2>Our Products</h2>
+      </div>
       <div className="products-grid">
         {filterProducts.length > 0 ? (
           filterProducts.map((product) => (
             <ProductCard product={product} key={product.id} />
           ))
         ) : (
-          <p>No matching products found.</p>
+          <p className="no-products">No matching products found.</p>
         )}
       </div>
     </div>

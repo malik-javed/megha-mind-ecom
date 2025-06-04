@@ -6,41 +6,54 @@ import {
   addToWishlist,
   removeFromWishlist,
 } from "../../features/wishlist/wishlistSlice";
+import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
+
+const toastConfig = {
+  duration: 2000,
+  position: "top-center",
+  id: "product-action",
+};
 
 function ProductCard({ product }) {
   const cartItems = useSelector((state) => state.cart.cartItems);
   const wishlistItems = useSelector((state) => state.wishlist.wishlistItems);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const isInWishlist = wishlistItems.some((item) => item.id === product.id);
 
-  const handleAddToCart = () => {
+  const handleAddToCart = (e) => {
+    e.stopPropagation();
     dispatch(addToCart(product));
-    toast.success("Product added");
+    toast.success("Product added to cart", toastConfig);
   };
 
-  const handleRemoveItem = (id) => {
-    // console.log("removed");
-    // console.log(id);
+  const handleRemoveItem = (e, id) => {
+    e.stopPropagation();
     dispatch(removeFromCart(id));
-    toast("Product remove");
+    toast("Product removed from cart", toastConfig);
   };
 
   // wishlist functions
-  const handleWishlistToggle = () => {
+  const handleWishlistToggle = (e) => {
+    e.stopPropagation();
     if (isInWishlist) {
       dispatch(removeFromWishlist(product.id));
-      toast("Removed from wishlist");
+      toast("Removed from wishlist", toastConfig);
     } else {
       dispatch(addToWishlist(product));
-      toast.success("Added to wishlist");
+      toast.success("Added to wishlist", toastConfig);
     }
   };
 
+  const handleCardClick = () => {
+    navigate(`/product/${product.id}`);
+  };
+
   return (
-    <div className="card">
-      <img className="product-image" src={product.image} />
+    <div className="card" onClick={handleCardClick}>
+      <img className="product-image" src={product.image} alt={product.name} />
       <h3>{product.name}</h3>
       <p className="price"> {product.price} </p>
       <p className="desc">{product.description}</p>
@@ -50,7 +63,7 @@ function ProductCard({ product }) {
       {cartItems.some((item) => item.id === product.id) ? (
         <button
           className="remove-btn"
-          onClick={() => handleRemoveItem(product.id)}
+          onClick={(e) => handleRemoveItem(e, product.id)}
         >
           Remove Item
         </button>
